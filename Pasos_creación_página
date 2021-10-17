@@ -1,0 +1,23 @@
+
+pasos para correr el proyecto:
+
+-crear entorno virtual
+-abrir directorio
+-instalar requerimientos (pip install -r requirements.txt
+- python manage.py migrate
+- python manage.py createsuperuser
+- python manage.py runserver
+
+
+
+pasos para crear la página en wagtail:
+
+1. Abrir la página "Home".
+2. Crear una página hija. Elegir "Store Index page"
+3. Crear una página hija de la obtenida en el segundo punto. Elegir "Category index page" y poner le nombre de la página, después crear página hija y poner el nombre de la categoría.
+4. Añadir otra página hija de la obtenida en el segundo punto y seleccionar "Product index page". Luego poner el título del producto.
+5. Para crear los productos se deben agregar páginas hijas de la obtenida en el punto anterior.
+
+Listo!!!
+
+

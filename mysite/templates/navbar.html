@@ -1,0 +1,29 @@
+{% load menu_tags %}
+
+<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-light">
+    <a href="/" class="navbar-brand">La librería de Fiodor</a>
+    <small class="navbar-text">
+        Un viaje a la antigua Rusia
+    </small>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+            {% main_menu %}
+
+            <form  class="form-inline mr-3">
+                <div class="input-group mb-3">
+                    <input name="query" type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" />
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">
+                            Ir
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </ul>
+    </div>
+</nav>

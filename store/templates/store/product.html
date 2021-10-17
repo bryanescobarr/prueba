@@ -1,0 +1,71 @@
+{% extends "base.html" %} 
+
+{% load wagtailcore_tags wagtailimages_tags %} 
+
+{% block content %} 
+    <h1>{{ page.title }}</h1>
+
+    {{ page.description | richtext}}
+
+    {% image page.image max-320x200 %}
+
+    <p> Price: ${{ page.price }} </p>
+
+    <form 
+        
+        action="{% url 'cart:cart_add' page.id %}"
+        method="post"
+        class="form-inline">
+    
+        {% csrf_token %}
+    
+        <input
+            type="hidden"
+            name="update"
+            value="False"
+            id="update">
+    
+        <div class="form-group">
+            <label 
+                for="quantity"
+                id="quantityLabel"
+                >
+                Cantidad:
+            </label>
+    
+            <div class="input-group">
+                <input 
+                type="number"
+                name="quantity"
+                required=""
+                value="1"
+                min="1"
+                id="quantity"
+                aria-describedby="quantityLabel"
+                class="form-control ml-2">
+            
+                <div class="input-group-append">
+                    <input 
+                        type="submit"
+                        value="Agregar al carro"
+                        class="btn btn-outline-primary ml-2"
+                    >
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="text-right">
+        <div class="btn-group" role="group" aria-label="Cart navigation">
+          <a 
+            href="http://127.0.0.1:8000/"
+            class="btn btn-outline-secondary">
+              <i class="fa fa-arrow-left"></i>
+              Volver a la tienda
+            </a>
+        </div>
+      </div>
+    
+
+{% endblock %}

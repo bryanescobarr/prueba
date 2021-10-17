@@ -1,0 +1,14 @@
+Django>=3.2,<3.3
+wagtail>=2.14,<2.15
+poetry>=1.0
+braintree
+dj-database-url==0.4.2
+python-dotenv
+wagtail-autocomplete
+django-crispy-forms
+django-extensions
+django-flatpickr
+wagtailfontawesome
+wagtailmenus
+arrow
+django-registration
